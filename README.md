@@ -6,6 +6,8 @@ Public storage on many OCI-complient registries is at least partially free, incl
 
 We can leverage the OCI Registry system to store data packages, at least replicas of public data packages. DataONE tracks the individual objects in a data package, including the data, scientific metadata, system metadata, and the package manifest (ORE), and each of these can be retrieved independently from the DataONE API. We also have a package download API, which supports downloading all of these components in a package format such as the BagIt format. We could leverage the OCI registries to store individual objects, or to store entire package directory structures in BagIt and other forms.
 
+I also just found that OCI images and artifacts can be read-only mounted as Kubernetes Volumes starting in k8s 1.33. See https://kubernetes.io/docs/concepts/storage/volumes/#image
+
 Below are some experiments in using the oras tool for uploading and downloading objects and packages from OCI.
 
 ## Uploading a BagIt directory as a package to GHCR:
